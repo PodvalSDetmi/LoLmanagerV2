@@ -1,0 +1,64 @@
+﻿<Page x:Class="LoLmanager.ListRunesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LoLmanager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListRunesPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="1" Background="DarkOrange"/>
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Background="#FFFFDE00"/>
+        <Button Content="Список героев" FontWeight="Bold" MinWidth="200" HorizontalAlignment="Left" Click="Back"/>
+        
+        <Label HorizontalAlignment="Center" Grid.Row="1" Content="Главные руны"/>
+        
+        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.ColumnSpan="3" Content="Дополнительные руны"/>
+
+        <ListView Grid.Row="2" ItemsSource="{Binding MainRunes}" SelectedItem="{Binding SelectedMainRune}" MouseDoubleClick="ToDescriptionRunePage">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView Grid.Row="2" Grid.Column="1" ItemsSource="{Binding SubRunes1}" SelectedItem="{Binding SelectedSubRune1}" MouseDoubleClick="ToDescriptionRunePage1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{Binding SubRunes2}" SelectedItem="{Binding SelectedSubRune2}" MouseDoubleClick="ToDescriptionRunePage2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView Grid.Row="2" Grid.Column="3" ItemsSource="{Binding SubRunes3}" SelectedItem="{Binding SelectedSubRune3}" MouseDoubleClick="ToDescriptionRunePage3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Page>

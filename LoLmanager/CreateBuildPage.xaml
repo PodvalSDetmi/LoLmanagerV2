@@ -1,0 +1,74 @@
+﻿<Page x:Class="LoLmanager.CreateBuildPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LoLmanager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateBuildPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Content="{Binding Hero.Name}"/>
+        <Button Content="Список героев" HorizontalAlignment="Left" Click="ToMainPage"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Label Content="Название билда"/>
+            <TextBox Text="{Binding NameB}" MaxWidth="300"/>
+            <Label Content="Главная руна"/>
+            <ComboBox ItemsSource="{Binding MainRunes}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedMainRune}"/>
+            <Label Content="Заклинание призывателя 1"/>
+            <ComboBox ItemsSource="{Binding SummonerSpells1}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSummonerSpell1}"/>
+            <Label Content="Заклинание призывателя 2"/>
+            <ComboBox ItemsSource="{Binding SummonerSpells2}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSummonerSpell2}"/>
+            <Label Content="Главная доп. руна 1"/>
+            <ComboBox ItemsSource="{Binding MainSubRunes1}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedMainSubRune1}"/>
+            <Label Content="Главная доп. руна 2"/>
+            <ComboBox ItemsSource="{Binding MainSubRunes2}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedMainSubRune2}"/>
+            <Label Content="Главная доп. руна 3"/>
+            <ComboBox ItemsSource="{Binding MainSubRunes3}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedMainSubRune3}"/>
+            <Label Content="Вторая доп. руна1"/>
+            <ComboBox ItemsSource="{Binding SudeSubRunes1}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSudeSubRune1}"/>
+            <Label Content="Вторая доп. руна2"/>
+            <ComboBox ItemsSource="{Binding SudeSubRunes2}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSudeSubRune2}"/>
+            <Label Content="Вторая доп. руна3"/>
+            <ComboBox ItemsSource="{Binding SudeSubRunes3}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedSudeSubRune3}"/>
+            <Label Content="Пассивка1"/>
+            <ComboBox ItemsSource="{Binding Passives1}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedPassive1}"/>
+            <Label Content="Пассивка2"/>
+            <ComboBox ItemsSource="{Binding Passives2}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedPassive2}"/>
+            <Label Content="Пассивка3"/>
+            <ComboBox ItemsSource="{Binding Passives3}"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SelectedPassive3}"/>
+            <Button Content="Сохранить" Click="SaveBuild"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>
